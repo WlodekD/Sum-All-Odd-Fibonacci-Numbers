@@ -1,0 +1,28 @@
+function sumFibs(num) {
+
+  var arr = [1];
+  var odds = [];
+  
+  for(var i=1; i<=num;){
+    arr.push(i);
+    i = arr[arr.length - 1]+arr[arr.length - 2];
+  }
+  
+  for(var j=0; j<arr.length; j++){
+    if(arr[j] % 2 != 0){
+      odds[j] = arr[j];
+    }
+  }
+  
+  function filtered(odds){
+    return odds != null;
+  }
+  odds = odds.filter(filtered);
+  
+  var result = 0;
+  for(var k in odds){result += odds[k];}
+  
+  return result;
+}
+
+sumFibs(9);
